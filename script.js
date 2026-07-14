@@ -106,7 +106,9 @@ async function dispatchToInternalEngine(rawDreamText) {
  */
 function renderActiveAnalysisView(analysisText) {
     const viewportDOM = document.getElementById('analysis-viewport');
-    viewportDOM.innerHTML = `<div class="analysis-wrapper">${analysisText}</div>`;
+    
+    // marked.parse() strips out the raw asterisks and creates actual HTML elements
+    viewportDOM.innerHTML = `<div class="analysis-wrapper">${marked.parse(analysisText)}</div>`;
 }
 
 /**
@@ -136,6 +138,9 @@ function refreshArchiveManifest() {
 /**
  * Pulls historical files from arrays to show them instantly without charging network overheads
  */
+/**
+ * Pulls historical files from arrays to show them instantly without charging network overheads
+ */
 function hotReloadHistoricalEntry(targetID) {
     const targetMatch = dreamMemoryStore.find(item => item.id === targetID);
     if (!targetMatch) return;
@@ -149,7 +154,8 @@ function hotReloadHistoricalEntry(targetID) {
             <p style="margin-bottom: 2rem; background: rgba(0,0,0,0.2); padding: 1rem; border-radius: 8px; border: 1px solid var(--glass-border); font-style: italic;">"${targetMatch.text}"</p>
             
             <h4 style="color: var(--neon-violet); margin-bottom: 0.5rem; font-size: 1rem; text-transform: uppercase; letter-spacing: 1px;">Psychological Translation Matrix</h4>
-            <div>${targetMatch.analysis}</div>
+            
+            <div>${marked.parse(targetMatch.analysis)}</div>
         </div>
     `;
 }
