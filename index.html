@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dream Note // AI Subconscious Decoder</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Deep Ethereal Aura Layers -->
+    <div class="dream-nebula">
+        <div class="cosmic-orb orb-purple"></div>
+        <div class="cosmic-orb orb-cyan"></div>
+        <div class="cosmic-orb orb-pink"></div>
+    </div>
+
+    <div class="app-viewport">
+        <header class="app-header">
+            <h1>Dream Note</h1>
+            <p class="tagline">Decode what your subconscious brain wants to communicate </p>
+        </header>
+
+        <main class="grid-workspace">
+            <!-- Execution Column -->
+            <section class="control-column">
+                <div class="crystal-card entry-deck">
+                    <h2>Enter Your New Dream </h2>
+                    <div class="input-group">
+                        <label for="dream-title">Dream Title</label>
+                        <input type="text" id="dream-title" placeholder="e.g., Flying over neon grids..." autocomplete="off">
+                    </div>
+                    <div class="input-group">
+                        <label for="dream-text">Describe Your Dream </label>
+                        <textarea id="dream-text" placeholder="Detail the imagery, prevailing emotional textures, characters, or sudden shifts..."></textarea>
+                    </div>
+                    <button id="action-trigger" onclick="processDreamSubmission()">
+                        <span> Analyze The Dream </span>
+                    </button>
+                </div>
+
+                <div class="crystal-card output-deck" id="analysis-deck">
+                    <h2>Psychological Analysis Output</h2>
+                    <div class="dynamic-readout" id="analysis-viewport">
+                        <p class="empty-state-notice">Awaiting incoming dream sequence text strings to extract neuro-linguistic meaning...</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- History Sidebar -->
+            <aside class="archive-column crystal-card">
+                <h2>Dreamscape Records Archive</h2>
+                <div class="scrollable-manifest" id="manifest-container">
+                    <!-- Hydrated dynamically from LocalStorage state -->
+                </div>
+            </aside>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
